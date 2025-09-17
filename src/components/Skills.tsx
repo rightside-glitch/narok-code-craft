@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Code, Database, Globe, Wrench } from "lucide-react";
+import skillsTechImage from "@/assets/skills-tech.jpg";
 
 const Skills = () => {
   const skillCategories = [
@@ -45,11 +46,16 @@ const Skills = () => {
   ];
 
   return (
-    <section className="h-screen flex items-center justify-center py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="h-screen flex items-center justify-center py-20 bg-background relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+        style={{ backgroundImage: `url(${skillsTechImage})` }}
+      ></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-rainbow bg-clip-text text-transparent">Technical Skills</h2>
             <p className="text-lg text-muted-foreground">
               A comprehensive overview of my technical expertise and proficiency levels
             </p>
@@ -57,7 +63,7 @@ const Skills = () => {
           
           <div className="grid lg:grid-cols-2 gap-8">
             {skillCategories.map((category, categoryIndex) => (
-              <Card key={categoryIndex} className="bg-card border-border shadow-card hover:shadow-glow transition-all duration-300">
+              <Card key={categoryIndex} className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 animate-scale-in" style={{animationDelay: `${categoryIndex * 200}ms`}}>
                 <CardHeader>
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-primary/10 rounded-lg">

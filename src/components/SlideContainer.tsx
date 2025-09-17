@@ -19,23 +19,23 @@ const SlideContainer: React.FC<SlideContainerProps> = ({ slides }) => {
   const nextSlide = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setTimeout(() => setCurrentSlide((prev) => (prev + 1) % slides.length), 50);
   };
 
   const prevSlide = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setTimeout(() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length), 50);
   };
 
   const goToSlide = (index: number) => {
     if (isTransitioning || index === currentSlide) return;
     setIsTransitioning(true);
-    setCurrentSlide(index);
+    setTimeout(() => setCurrentSlide(index), 50);
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsTransitioning(false), 500);
+    const timer = setTimeout(() => setIsTransitioning(false), 600);
     return () => clearTimeout(timer);
   }, [currentSlide]);
 
@@ -66,16 +66,18 @@ const SlideContainer: React.FC<SlideContainerProps> = ({ slides }) => {
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 w-full h-full transition-all duration-500 ease-out ${
+            className={`absolute inset-0 w-full h-full transition-all duration-[600ms] ease-out ${
               index === currentSlide
-                ? "opacity-100 translate-x-0 z-10"
+                ? "opacity-100 translate-x-0 scale-100 z-10"
                 : index < currentSlide
-                ? "opacity-0 -translate-x-full z-0"
-                : "opacity-0 translate-x-full z-0"
+                ? "opacity-0 -translate-x-full scale-95 z-0"
+                : "opacity-0 translate-x-full scale-95 z-0"
             }`}
           >
-            <div className="w-full h-full overflow-y-auto animate-fade-in">
-              {slide.component}
+            <div className="w-full h-full overflow-y-auto">
+              <div className="animate-fade-in">
+                {slide.component}
+              </div>
             </div>
           </div>
         ))}
@@ -88,7 +90,7 @@ const SlideContainer: React.FC<SlideContainerProps> = ({ slides }) => {
           size="icon"
           onClick={prevSlide}
           disabled={isTransitioning}
-          className="bg-card/80 backdrop-blur-sm border-primary/20 hover:bg-primary hover:text-primary-foreground shadow-glow"
+          className="bg-card/90 backdrop-blur-md border-primary/30 hover:bg-primary hover:text-primary-foreground shadow-glow hover:shadow-glow-lg transition-all duration-300 hover:scale-110 animate-glow-pulse"
         >
           <ChevronLeft className="w-5 h-5" />
         </Button>
@@ -100,7 +102,7 @@ const SlideContainer: React.FC<SlideContainerProps> = ({ slides }) => {
           size="icon"
           onClick={nextSlide}
           disabled={isTransitioning}
-          className="bg-card/80 backdrop-blur-sm border-primary/20 hover:bg-primary hover:text-primary-foreground shadow-glow"
+          className="bg-card/90 backdrop-blur-md border-primary/30 hover:bg-primary hover:text-primary-foreground shadow-glow hover:shadow-glow-lg transition-all duration-300 hover:scale-110 animate-glow-pulse"
         >
           <ChevronRight className="w-5 h-5" />
         </Button>
@@ -108,7 +110,7 @@ const SlideContainer: React.FC<SlideContainerProps> = ({ slides }) => {
 
       {/* Slide Indicators */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex space-x-3 bg-card/80 backdrop-blur-sm rounded-full px-4 py-2 border border-border/50">
+        <div className="flex space-x-3 bg-card/90 backdrop-blur-md rounded-full px-6 py-3 border border-border/50 shadow-floating">
           {slides.map((slide, index) => (
             <button
               key={slide.id}
@@ -116,8 +118,8 @@ const SlideContainer: React.FC<SlideContainerProps> = ({ slides }) => {
               disabled={isTransitioning}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentSlide
-                  ? "bg-primary shadow-glow scale-125"
-                  : "bg-muted-foreground/50 hover:bg-muted-foreground"
+                  ? "bg-gradient-primary shadow-glow scale-125 animate-glow-pulse"
+                  : "bg-muted-foreground/50 hover:bg-primary hover:scale-110"
               }`}
               title={slide.title}
             />

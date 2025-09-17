@@ -17,8 +17,8 @@ All colors MUST be HSL.
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 200 98% 39%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 260 100% 80%;
+    --primary-foreground: 240 10% 3.9%;
 
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
@@ -26,22 +26,40 @@ All colors MUST be HSL.
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 280 100% 75%;
+    --accent-foreground: 240 10% 3.9%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 200 98% 39%;
+    --ring: 260 100% 80%;
 
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(200 98% 39%), hsl(220 91% 50%));
+    /* Enhanced color palette */
+    --primary-glow: 260 100% 85%;
+    --secondary-glow: 280 100% 80%;
+    --accent-blue: 220 91% 50%;
+    --accent-purple: 280 100% 70%;
+    --accent-pink: 320 100% 75%;
+    --accent-orange: 25 95% 65%;
+
+    /* Beautiful gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(260 100% 80%), hsl(280 100% 75%), hsl(220 91% 50%));
     --gradient-secondary: linear-gradient(135deg, hsl(240 3.7% 15.9%), hsl(240 5.9% 10%));
-    --shadow-glow: 0 0 40px hsl(200 98% 39% / 0.3);
-    --shadow-card: 0 8px 32px hsl(240 10% 3.9% / 0.5);
+    --gradient-accent: linear-gradient(135deg, hsl(280 100% 75%), hsl(320 100% 75%));
+    --gradient-rainbow: linear-gradient(135deg, hsl(260 100% 80%), hsl(280 100% 75%), hsl(320 100% 75%), hsl(25 95% 65%));
+    
+    /* Advanced shadows and glows */
+    --shadow-glow: 0 0 40px hsl(260 100% 80% / 0.4);
+    --shadow-glow-lg: 0 0 60px hsl(260 100% 80% / 0.3);
+    --shadow-card: 0 8px 32px hsl(240 10% 3.9% / 0.8);
+    --shadow-floating: 0 25px 50px hsl(240 10% 3.9% / 0.6);
+    
+    /* Enhanced transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elastic: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     --radius: 0.5rem;
 

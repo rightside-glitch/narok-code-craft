@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Target, Briefcase, Globe, TrendingUp } from "lucide-react";
+import goalsTechImage from "@/assets/goals-tech.jpg";
 
 const Goals = () => {
   const goals = [
@@ -39,11 +40,16 @@ const Goals = () => {
   ];
 
   return (
-    <section className="h-screen flex items-center justify-center py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="h-screen flex items-center justify-center py-20 bg-background relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-8"
+        style={{ backgroundImage: `url(${goalsTechImage})` }}
+      ></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Career Goals</h2>
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-rainbow bg-clip-text text-transparent">Career Goals</h2>
             <p className="text-lg text-muted-foreground">
               Driven by purpose, focused on growth, and committed to making a positive impact
             </p>
@@ -51,10 +57,10 @@ const Goals = () => {
           
           <div className="grid lg:grid-cols-3 gap-8">
             {goals.map((goal, index) => (
-              <Card key={index} className="bg-card border-border shadow-card hover:shadow-glow transition-all duration-300">
+              <Card key={index} className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 animate-scale-in" style={{animationDelay: `${index * 200}ms`}}>
                 <CardHeader className="text-center">
-                  <div className="mx-auto p-4 bg-primary/10 rounded-full w-fit mb-4">
-                    <goal.icon className="w-8 h-8 text-primary" />
+                  <div className="mx-auto p-4 bg-gradient-primary rounded-full w-fit mb-4 shadow-glow animate-glow-pulse">
+                    <goal.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <CardTitle className="text-xl">{goal.title}</CardTitle>
                 </CardHeader>

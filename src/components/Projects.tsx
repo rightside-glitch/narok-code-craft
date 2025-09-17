@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Monitor, Users } from "lucide-react";
+import projectsTechImage from "@/assets/projects-tech.jpg";
 
 const Projects = () => {
   const projects = [
@@ -38,11 +39,16 @@ const Projects = () => {
   ];
 
   return (
-    <section className="h-screen flex items-center justify-center py-20 bg-secondary/50">
-      <div className="container mx-auto px-4">
+    <section className="h-screen flex items-center justify-center py-20 bg-secondary/50 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+        style={{ backgroundImage: `url(${projectsTechImage})` }}
+      ></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-accent bg-clip-text text-transparent">Projects</h2>
             <p className="text-lg text-muted-foreground">
               Showcasing practical applications of my technical skills and collaborative abilities
             </p>
@@ -50,17 +56,17 @@ const Projects = () => {
           
           <div className="grid lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="bg-card border-border shadow-card hover:shadow-glow transition-all duration-300 group">
+              <Card key={index} className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 animate-scale-in group" style={{animationDelay: `${index * 300}ms`}}>
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="p-3 bg-primary/10 rounded-lg">
-                        <project.icon className="w-6 h-6 text-primary" />
+                      <div className="p-3 bg-gradient-primary rounded-lg shadow-glow animate-glow-pulse">
+                        <project.icon className="w-6 h-6 text-primary-foreground" />
                       </div>
                       <div>
                         <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
                         <div className="flex gap-2">
-                          <Badge className="bg-primary/10 text-primary border-primary/20">
+                          <Badge className="bg-gradient-primary text-primary-foreground border-0 shadow-glow">
                             {project.status}
                           </Badge>
                           <Badge variant="outline">
