@@ -45,7 +45,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="h-screen flex items-center justify-center py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
