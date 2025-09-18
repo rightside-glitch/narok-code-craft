@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { 
   User, 
   Heart, 
@@ -27,8 +28,16 @@ import skillsTechImage from "@/assets/skills-tech.jpg";
 import projectsTechImage from "@/assets/projects-tech.jpg";
 import goalsTechImage from "@/assets/goals-tech.jpg";
 import contactTechImage from "@/assets/contact-tech.jpg";
+import About from "@/components/About";
+import Education from "@/components/Education";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import Goals from "@/components/Goals";
+import Contact from "@/components/Contact";
 
 const HomePage = () => {
+  const [openModal, setOpenModal] = useState<string | null>(null);
+
   const skills = [
     { name: "Java", level: "Intermediate", icon: Code },
     { name: "JavaScript", level: "Intermediate", icon: Code },
@@ -111,7 +120,10 @@ const HomePage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             
             {/* About Card */}
-            <Card className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 relative overflow-hidden">
+            <Card 
+              className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 relative overflow-hidden cursor-pointer"
+              onClick={() => setOpenModal('about')}
+            >
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
                 style={{ backgroundImage: `url(${heroTechImage})` }}
@@ -150,7 +162,10 @@ const HomePage = () => {
             </Card>
 
             {/* Education Card */}
-            <Card className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 relative overflow-hidden">
+            <Card 
+              className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 relative overflow-hidden cursor-pointer"
+              onClick={() => setOpenModal('education')}
+            >
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
                 style={{ backgroundImage: `url(${educationTechImage})` }}
@@ -186,7 +201,10 @@ const HomePage = () => {
             </Card>
 
             {/* Skills Card */}
-            <Card className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 relative overflow-hidden">
+            <Card 
+              className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 relative overflow-hidden cursor-pointer"
+              onClick={() => setOpenModal('skills')}
+            >
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
                 style={{ backgroundImage: `url(${skillsTechImage})` }}
@@ -218,7 +236,10 @@ const HomePage = () => {
             </Card>
 
             {/* Projects Card */}
-            <Card className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 relative overflow-hidden lg:col-span-2">
+            <Card 
+              className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 relative overflow-hidden lg:col-span-2 cursor-pointer"
+              onClick={() => setOpenModal('projects')}
+            >
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
                 style={{ backgroundImage: `url(${projectsTechImage})` }}
@@ -259,7 +280,10 @@ const HomePage = () => {
             </Card>
 
             {/* Goals Card */}
-            <Card className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 relative overflow-hidden">
+            <Card 
+              className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 relative overflow-hidden cursor-pointer"
+              onClick={() => setOpenModal('goals')}
+            >
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
                 style={{ backgroundImage: `url(${goalsTechImage})` }}
@@ -291,7 +315,10 @@ const HomePage = () => {
             </Card>
 
             {/* Contact Card */}
-            <Card className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 relative overflow-hidden lg:col-span-2">
+            <Card 
+              className="bg-card/90 backdrop-blur-md border-primary/20 shadow-floating hover:shadow-glow-lg transition-all duration-500 hover:scale-105 relative overflow-hidden lg:col-span-2 cursor-pointer"
+              onClick={() => setOpenModal('contact')}
+            >
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
                 style={{ backgroundImage: `url(${contactTechImage})` }}
@@ -335,6 +362,43 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Modals */}
+      <Dialog open={openModal === 'about'} onOpenChange={() => setOpenModal(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <About />
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={openModal === 'education'} onOpenChange={() => setOpenModal(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <Education />
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={openModal === 'skills'} onOpenChange={() => setOpenModal(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <Skills />
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={openModal === 'projects'} onOpenChange={() => setOpenModal(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <Projects />
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={openModal === 'goals'} onOpenChange={() => setOpenModal(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <Goals />
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={openModal === 'contact'} onOpenChange={() => setOpenModal(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <Contact />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
