@@ -1,33 +1,17 @@
-import React, { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { 
   User, 
-  Heart, 
-  Target, 
   GraduationCap, 
-  BookOpen, 
   Code, 
-  Database, 
-  Globe, 
   FolderOpen, 
-  Github, 
-  ExternalLink,
-  Briefcase,
   TrendingUp,
-  Users,
   Mail,
   MapPin,
-  Linkedin
+  Github
 } from "lucide-react";
 import heroTechImage from "@/assets/hero-tech.jpg";
-import educationTechImage from "@/assets/education-tech.jpg";
-import skillsTechImage from "@/assets/skills-tech.jpg";
-import projectsTechImage from "@/assets/projects-tech.jpg";
-import goalsTechImage from "@/assets/goals-tech.jpg";
-import contactTechImage from "@/assets/contact-tech.jpg";
 import About from "@/components/About";
 import Education from "@/components/Education";
 import Skills from "@/components/Skills";
@@ -36,38 +20,12 @@ import Goals from "@/components/Goals";
 import Contact from "@/components/Contact";
 
 const HomePage = () => {
-  const [openModal, setOpenModal] = useState<string | null>(null);
-
-  const skills = [
-    { name: "Java", level: "Intermediate", icon: Code },
-    { name: "JavaScript", level: "Intermediate", icon: Code },
-    { name: "React", level: "Intermediate", icon: Globe },
-    { name: "HTML/CSS", level: "Advanced", icon: Globe },
-    { name: "Firebase", level: "Beginner", icon: Database },
-    { name: "TailwindCSS", level: "Intermediate", icon: Globe }
-  ];
-
-  const projects = [
-    {
-      title: "Real-Time Bandwidth Tracking Dashboard",
-      description: "Built using React + Firebase, deployed on Vercel with live bandwidth tracking and responsive UI/UX.",
-      technologies: ["React", "Firebase", "TailwindCSS", "Vercel"]
-    },
-    {
-      title: "Group Java Assignment",
-      description: "Applied inheritance, polymorphism, arrays, and exception handling in a team-based Java program.",
-      technologies: ["Java", "OOP", "Exception Handling"]
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-  ];
-
-  const focusAreas = [
-    "Object-Oriented Programming (Java)",
-    "Arrays & Data Structures",
-    "Inheritance & Polymorphism",
-    "Exception Handling",
-    "GUI Development",
-    "Real-time Systems"
-  ];
+  };
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
@@ -86,42 +44,42 @@ const HomePage = () => {
             
             <nav className="hidden md:flex items-center space-x-6">
               <button
-                onClick={() => setOpenModal('about')}
+                onClick={() => scrollToSection('about')}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 hover:scale-105"
               >
                 <User className="w-4 h-4" />
                 About
               </button>
               <button
-                onClick={() => setOpenModal('education')}
+                onClick={() => scrollToSection('education')}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 hover:scale-105"
               >
                 <GraduationCap className="w-4 h-4" />
                 Education
               </button>
               <button
-                onClick={() => setOpenModal('skills')}
+                onClick={() => scrollToSection('skills')}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 hover:scale-105"
               >
                 <Code className="w-4 h-4" />
                 Skills
               </button>
               <button
-                onClick={() => setOpenModal('projects')}
+                onClick={() => scrollToSection('projects')}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 hover:scale-105"
               >
                 <FolderOpen className="w-4 h-4" />
                 Projects
               </button>
               <button
-                onClick={() => setOpenModal('goals')}
+                onClick={() => scrollToSection('goals')}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 hover:scale-105"
               >
                 <TrendingUp className="w-4 h-4" />
                 Goals
               </button>
               <button
-                onClick={() => setOpenModal('contact')}
+                onClick={() => scrollToSection('contact')}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 hover:scale-105"
               >
                 <Mail className="w-4 h-4" />
@@ -134,42 +92,42 @@ const HomePage = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setOpenModal('about')}
+                onClick={() => scrollToSection('about')}
               >
                 <User className="w-4 h-4" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setOpenModal('education')}
+                onClick={() => scrollToSection('education')}
               >
                 <GraduationCap className="w-4 h-4" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setOpenModal('skills')}
+                onClick={() => scrollToSection('skills')}
               >
                 <Code className="w-4 h-4" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setOpenModal('projects')}
+                onClick={() => scrollToSection('projects')}
               >
                 <FolderOpen className="w-4 h-4" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setOpenModal('goals')}
+                onClick={() => scrollToSection('goals')}
               >
                 <TrendingUp className="w-4 h-4" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setOpenModal('contact')}
+                onClick={() => scrollToSection('contact')}
               >
                 <Mail className="w-4 h-4" />
               </Button>
@@ -204,7 +162,7 @@ const HomePage = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-primary hover:shadow-glow-lg text-primary-foreground shadow-glow transition-all duration-300 hover:scale-110"
-                onClick={() => setOpenModal('contact')}
+                onClick={() => scrollToSection('contact')}
               >
                 <Mail className="w-5 h-5 mr-2" />
                 Get In Touch
@@ -213,7 +171,7 @@ const HomePage = () => {
                 variant="outline" 
                 size="lg"
                 className="border-primary/50 text-primary-glow hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-                onClick={() => setOpenModal('projects')}
+                onClick={() => scrollToSection('projects')}
               >
                 <Github className="w-5 h-5 mr-2" />
                 View Projects
@@ -229,42 +187,35 @@ const HomePage = () => {
         <div className="absolute bottom-32 left-1/4 w-24 h-24 bg-accent-orange/20 rounded-full blur-xl animate-float delay-1500"></div>
       </section>
 
-      {/* Modals */}
-      <Dialog open={openModal === 'about'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-          <About />
-        </DialogContent>
-      </Dialog>
+      {/* About Section */}
+      <section id="about" className="py-20">
+        <About />
+      </section>
 
-      <Dialog open={openModal === 'education'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-          <Education />
-        </DialogContent>
-      </Dialog>
+      {/* Education Section */}
+      <section id="education" className="py-20">
+        <Education />
+      </section>
 
-      <Dialog open={openModal === 'skills'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-          <Skills />
-        </DialogContent>
-      </Dialog>
+      {/* Skills Section */}
+      <section id="skills" className="py-20">
+        <Skills />
+      </section>
 
-      <Dialog open={openModal === 'projects'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-          <Projects />
-        </DialogContent>
-      </Dialog>
+      {/* Projects Section */}
+      <section id="projects" className="py-20">
+        <Projects />
+      </section>
 
-      <Dialog open={openModal === 'goals'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-          <Goals />
-        </DialogContent>
-      </Dialog>
+      {/* Goals Section */}
+      <section id="goals" className="py-20">
+        <Goals />
+      </section>
 
-      <Dialog open={openModal === 'contact'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-          <Contact />
-        </DialogContent>
-      </Dialog>
+      {/* Contact Section */}
+      <section id="contact" className="py-20">
+        <Contact />
+      </section>
     </div>
   );
 };
