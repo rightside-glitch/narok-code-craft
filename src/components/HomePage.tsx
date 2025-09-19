@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { 
   User, 
   GraduationCap, 
@@ -20,12 +21,7 @@ import Goals from "@/components/Goals";
 import Contact from "@/components/Contact";
 
 const HomePage = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [openModal, setOpenModal] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
@@ -44,42 +40,42 @@ const HomePage = () => {
             
             <nav className="hidden md:flex items-center space-x-6">
               <button
-                onClick={() => scrollToSection('about')}
+                onClick={() => setOpenModal('about')}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 hover:scale-105"
               >
                 <User className="w-4 h-4" />
                 About
               </button>
               <button
-                onClick={() => scrollToSection('education')}
+                onClick={() => setOpenModal('education')}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 hover:scale-105"
               >
                 <GraduationCap className="w-4 h-4" />
                 Education
               </button>
               <button
-                onClick={() => scrollToSection('skills')}
+                onClick={() => setOpenModal('skills')}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 hover:scale-105"
               >
                 <Code className="w-4 h-4" />
                 Skills
               </button>
               <button
-                onClick={() => scrollToSection('projects')}
+                onClick={() => setOpenModal('projects')}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 hover:scale-105"
               >
                 <FolderOpen className="w-4 h-4" />
                 Projects
               </button>
               <button
-                onClick={() => scrollToSection('goals')}
+                onClick={() => setOpenModal('goals')}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 hover:scale-105"
               >
                 <TrendingUp className="w-4 h-4" />
                 Goals
               </button>
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => setOpenModal('contact')}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 hover:scale-105"
               >
                 <Mail className="w-4 h-4" />
@@ -92,42 +88,42 @@ const HomePage = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => scrollToSection('about')}
+                onClick={() => setOpenModal('about')}
               >
                 <User className="w-4 h-4" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => scrollToSection('education')}
+                onClick={() => setOpenModal('education')}
               >
                 <GraduationCap className="w-4 h-4" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => scrollToSection('skills')}
+                onClick={() => setOpenModal('skills')}
               >
                 <Code className="w-4 h-4" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => scrollToSection('projects')}
+                onClick={() => setOpenModal('projects')}
               >
                 <FolderOpen className="w-4 h-4" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => scrollToSection('goals')}
+                onClick={() => setOpenModal('goals')}
               >
                 <TrendingUp className="w-4 h-4" />
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => scrollToSection('contact')}
+                onClick={() => setOpenModal('contact')}
               >
                 <Mail className="w-4 h-4" />
               </Button>
@@ -162,7 +158,7 @@ const HomePage = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-primary hover:shadow-glow-lg text-primary-foreground shadow-glow transition-all duration-300 hover:scale-110"
-                onClick={() => scrollToSection('contact')}
+                onClick={() => setOpenModal('contact')}
               >
                 <Mail className="w-5 h-5 mr-2" />
                 Get In Touch
@@ -171,7 +167,7 @@ const HomePage = () => {
                 variant="outline" 
                 size="lg"
                 className="border-primary/50 text-primary-glow hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-                onClick={() => scrollToSection('projects')}
+                onClick={() => setOpenModal('projects')}
               >
                 <Github className="w-5 h-5 mr-2" />
                 View Projects
@@ -187,35 +183,42 @@ const HomePage = () => {
         <div className="absolute bottom-32 left-1/4 w-24 h-24 bg-accent-orange/20 rounded-full blur-xl animate-float delay-1500"></div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20">
-        <About />
-      </section>
+      {/* Modals */}
+      <Dialog open={openModal === 'about'} onOpenChange={() => setOpenModal(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <About />
+        </DialogContent>
+      </Dialog>
 
-      {/* Education Section */}
-      <section id="education" className="py-20">
-        <Education />
-      </section>
+      <Dialog open={openModal === 'education'} onOpenChange={() => setOpenModal(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <Education />
+        </DialogContent>
+      </Dialog>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-20">
-        <Skills />
-      </section>
+      <Dialog open={openModal === 'skills'} onOpenChange={() => setOpenModal(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <Skills />
+        </DialogContent>
+      </Dialog>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20">
-        <Projects />
-      </section>
+      <Dialog open={openModal === 'projects'} onOpenChange={() => setOpenModal(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <Projects />
+        </DialogContent>
+      </Dialog>
 
-      {/* Goals Section */}
-      <section id="goals" className="py-20">
-        <Goals />
-      </section>
+      <Dialog open={openModal === 'goals'} onOpenChange={() => setOpenModal(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <Goals />
+        </DialogContent>
+      </Dialog>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20">
-        <Contact />
-      </section>
+      <Dialog open={openModal === 'contact'} onOpenChange={() => setOpenModal(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          <Contact />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
