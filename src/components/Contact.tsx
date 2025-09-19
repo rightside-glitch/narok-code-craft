@@ -14,21 +14,23 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "Contact Available",
-      description: "Professional inquiries welcome"
+      value: "saolis203@gmail.com",
+      description: "Professional inquiries welcome",
+      href: "mailto:saolis203@gmail.com"
     },
     {
-      icon: MessageSquare,
-      label: "Availability",
-      value: "Open to Opportunities",
-      description: "Remote projects & freelancing"
+      icon: Phone,
+      label: "WhatsApp",
+      value: "0742578369",
+      description: "Quick communication",
+      href: "https://wa.me/254742578369"
     }
   ];
 
   const socialLinks = [
-    { icon: Github, label: "GitHub", href: "#", description: "View my code" },
-    { icon: Linkedin, label: "LinkedIn", href: "#", description: "Professional network" },
-    { icon: Mail, label: "Email", href: "#", description: "Get in touch" }
+    { icon: Github, label: "GitHub", href: "https://github.com/account", description: "View my code" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/samuel-parkire-911887264", description: "Professional network" },
+    { icon: Mail, label: "Email", href: "mailto:saolis203@gmail.com", description: "Get in touch" }
   ];
 
   return (
@@ -69,7 +71,18 @@ const Contact = () => {
                       </div>
                       <div>
                         <h4 className="font-medium">{info.label}</h4>
-                        <p className="text-sm font-medium text-primary">{info.value}</p>
+                        {info.href ? (
+                          <a 
+                            href={info.href} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-sm font-medium text-primary hover:underline"
+                          >
+                            {info.value}
+                          </a>
+                        ) : (
+                          <p className="text-sm font-medium text-primary">{info.value}</p>
+                        )}
                         <p className="text-xs text-muted-foreground">{info.description}</p>
                       </div>
                     </div>
@@ -97,12 +110,15 @@ const Contact = () => {
                       key={index}
                       variant="outline"
                       className="w-full justify-start border-primary/20 hover:bg-primary hover:text-primary-foreground"
+                      asChild
                     >
-                      <link.icon className="w-5 h-5 mr-3" />
-                      <div className="text-left">
-                        <p className="font-medium">{link.label}</p>
-                        <p className="text-xs text-muted-foreground">{link.description}</p>
-                      </div>
+                      <a href={link.href} target="_blank" rel="noopener noreferrer">
+                        <link.icon className="w-5 h-5 mr-3" />
+                        <div className="text-left">
+                          <p className="font-medium">{link.label}</p>
+                          <p className="text-xs text-muted-foreground">{link.description}</p>
+                        </div>
+                      </a>
                     </Button>
                   ))}
                 </div>
@@ -123,9 +139,12 @@ const Contact = () => {
               <Button 
                 size="lg"
                 className="bg-white text-primary hover:bg-white/90 shadow-lg"
+                asChild
               >
-                <Mail className="w-5 h-5 mr-2" />
-                Start a Conversation
+                <a href="mailto:saolis203@gmail.com">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Start a Conversation
+                </a>
               </Button>
             </CardContent>
           </Card>
