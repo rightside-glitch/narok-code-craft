@@ -185,38 +185,50 @@ const HomePage = () => {
 
       {/* Modals */}
       <Dialog open={openModal === 'about'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-          <About />
+        <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden p-0">
+          <div className="overflow-y-auto max-h-[90vh] p-6">
+            <About />
+          </div>
         </DialogContent>
       </Dialog>
 
       <Dialog open={openModal === 'education'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-          <Education />
+        <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden p-0">
+          <div className="overflow-y-auto max-h-[90vh] p-6">
+            <Education />
+          </div>
         </DialogContent>
       </Dialog>
 
       <Dialog open={openModal === 'skills'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-          <Skills />
+        <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden p-0">
+          <div className="overflow-y-auto max-h-[90vh] p-6">
+            <Skills />
+          </div>
         </DialogContent>
       </Dialog>
 
       <Dialog open={openModal === 'projects'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-          <Projects />
+        <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden p-0">
+          <div className="overflow-y-auto max-h-[90vh] p-6">
+            <Projects />
+          </div>
         </DialogContent>
       </Dialog>
 
       <Dialog open={openModal === 'goals'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-          <Goals />
+        <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden p-0">
+          <div className="overflow-y-auto max-h-[90vh] p-6">
+            <Goals />
+          </div>
         </DialogContent>
       </Dialog>
 
       <Dialog open={openModal === 'contact'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-          <Contact />
+        <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden p-0">
+          <div className="overflow-y-auto max-h-[90vh] p-6">
+            <Contact />
+          </div>
         </DialogContent>
       </Dialog>
     </div>
