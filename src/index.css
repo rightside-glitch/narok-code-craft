@@ -8,8 +8,8 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Actual Kenyan Flag Colors */
-    --background: 0 0% 8%;
+    /* Authentic Kenyan Flag Theme */
+    --background: 0 0% 5%;
     --foreground: 0 0% 98%;
 
     --card: 0 0% 8%;
@@ -18,43 +18,43 @@ All colors MUST be HSL.
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 10%; /* True black from Kenyan flag */
+    --primary: 0 0% 12%; /* Deep black from flag */
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 0 100% 40%; /* True red from Kenyan flag */
+    --secondary: 0 85% 48%; /* Vibrant red from flag */
     --secondary-foreground: 0 0% 98%;
 
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 120 100% 20%; /* True green from Kenyan flag */
+    --accent: 120 95% 28%; /* Rich green from flag */
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 15%;
-    --ring: 0 100% 40%;
+    --border: 0 0% 18%;
+    --input: 0 0% 12%;
+    --ring: 0 85% 48%;
 
-    /* Kenyan Flag color variations */
+    /* Kenyan Flag inspired palette */
     --primary-glow: 0 0% 25%;
-    --secondary-glow: 0 100% 50%;
-    --accent-blue: 0 0% 98%; /* White from Kenyan flag */
-    --accent-purple: 120 100% 25%;
-    --accent-pink: 0 100% 45%;
-    --accent-orange: 0 0% 90%;
+    --secondary-glow: 0 85% 55%;
+    --accent-blue: 0 0% 95%; /* Clean white from flag */
+    --accent-purple: 120 95% 35%;
+    --accent-pink: 0 85% 52%;
+    --accent-orange: 0 0% 88%;
 
-    /* Authentic Kenyan Flag gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 100% 40%), hsl(0 0% 98%), hsl(120 100% 20%));
-    --gradient-secondary: linear-gradient(135deg, hsl(0 100% 40%), hsl(0 100% 35%));
-    --gradient-accent: linear-gradient(135deg, hsl(120 100% 20%), hsl(120 100% 25%));
-    --gradient-rainbow: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 100% 40%), hsl(0 0% 98%), hsl(120 100% 20%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 12%));
+    /* Kenyan Flag authentic gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 12%), hsl(0 85% 48%), hsl(0 0% 95%), hsl(120 95% 28%));
+    --gradient-secondary: linear-gradient(135deg, hsl(0 85% 48%), hsl(0 85% 40%));
+    --gradient-accent: linear-gradient(135deg, hsl(120 95% 28%), hsl(120 95% 35%));
+    --gradient-rainbow: linear-gradient(135deg, hsl(0 0% 12%), hsl(0 85% 48%), hsl(0 0% 95%), hsl(120 95% 28%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 5%), hsl(0 0% 10%));
     
-    /* Enhanced shadows with Kenyan flag colors */
-    --shadow-glow: 0 0 40px hsl(0 100% 40% / 0.4);
-    --shadow-glow-lg: 0 0 60px hsl(0 100% 40% / 0.3);
+    /* Flag-inspired shadows */
+    --shadow-glow: 0 0 40px hsl(0 85% 48% / 0.4);
+    --shadow-glow-lg: 0 0 60px hsl(0 85% 48% / 0.3);
     --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.8);
     --shadow-floating: 0 25px 50px hsl(0 0% 0% / 0.6);
     
