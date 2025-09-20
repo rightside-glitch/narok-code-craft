@@ -14,6 +14,7 @@ import {
   Github
 } from "lucide-react";
 import heroTechImage from "@/assets/hero-tech.jpg";
+import computerTechImage from "@/assets/computer-tech.jpg";
 import About from "@/components/About";
 import Education from "@/components/Education";
 import Skills from "@/components/Skills";
@@ -137,7 +138,7 @@ const HomePage = () => {
       <section className="relative overflow-hidden pt-16 pb-20 bg-gradient-primary min-h-screen flex items-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{ backgroundImage: `url(${heroTechImage})` }}
+          style={{ backgroundImage: `url(${computerTechImage})` }}
         />
         <div className="absolute inset-0 bg-gradient-primary opacity-80" />
         

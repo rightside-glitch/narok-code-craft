@@ -5,7 +5,7 @@ import { ExternalLink, Github, Monitor, Users } from "lucide-react";
 import projectsTechImage from "@/assets/projects-tech.jpg";
 
 const Projects = () => {
-  const projects = [
+const projects = [
     {
       title: "Real-Time Bandwidth Tracking Dashboard",
       description: "A comprehensive dashboard for monitoring network bandwidth usage in real-time with live tracking capabilities and responsive UI/UX design.",
@@ -19,7 +19,9 @@ const Projects = () => {
       ],
       icon: Monitor,
       status: "Deployed",
-      type: "Full-Stack Web Application"
+      type: "Full-Stack Web Application",
+      liveUrl: "https://bandwidth-liart.vercel.app/",
+      githubUrl: "#"
     },
     {
       title: "Group Java Assignment (Arrays & OOP)",
@@ -34,7 +36,9 @@ const Projects = () => {
       ],
       icon: Users,
       status: "Completed",
-      type: "Academic Project"
+      type: "Academic Project",
+      liveUrl: "#",
+      githubUrl: "#"
     }
   ];
 
@@ -105,10 +109,12 @@ const Projects = () => {
                     </div>
                   </div>
                   
-                  <div className="flex gap-3 pt-4">
+                   <div className="flex gap-3 pt-4">
                     <Button 
                       size="sm" 
                       className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                      onClick={() => window.open(project.liveUrl, '_blank')}
+                      disabled={project.liveUrl === '#'}
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       View Project
@@ -117,6 +123,8 @@ const Projects = () => {
                       variant="outline" 
                       size="sm"
                       className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                      onClick={() => window.open(project.githubUrl, '_blank')}
+                      disabled={project.githubUrl === '#'}
                     >
                       <Github className="w-4 h-4 mr-2" />
                       Source Code
