@@ -86,6 +86,29 @@ const projects = [
                     {project.description}
                   </p>
                   
+                  {/* Action buttons moved to top for better accessibility */}
+                  <div className="flex gap-3 py-2">
+                    <Button 
+                      size="sm" 
+                      className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow"
+                      onClick={() => window.open(project.liveUrl, '_blank')}
+                      disabled={project.liveUrl === '#'}
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      View Project
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                      onClick={() => window.open(project.githubUrl, '_blank')}
+                      disabled={project.githubUrl === '#'}
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      Source Code
+                    </Button>
+                  </div>
+                  
                   <div>
                     <h4 className="font-semibold mb-3">Key Features</h4>
                     <div className="grid grid-cols-1 gap-2">
@@ -107,28 +130,6 @@ const projects = [
                         </Badge>
                       ))}
                     </div>
-                  </div>
-                  
-                   <div className="flex gap-3 pt-4">
-                    <Button 
-                      size="sm" 
-                      className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                      onClick={() => window.open(project.liveUrl, '_blank')}
-                      disabled={project.liveUrl === '#'}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      View Project
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                      onClick={() => window.open(project.githubUrl, '_blank')}
-                      disabled={project.githubUrl === '#'}
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Source Code
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
