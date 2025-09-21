@@ -15,7 +15,7 @@ const Education = () => {
   ];
 
   return (
-    <section className="h-screen flex items-center justify-center py-20 bg-secondary/50 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center py-20 bg-background relative overflow-hidden">{/* Full page with black background */}
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
