@@ -187,48 +187,48 @@ const HomePage = () => {
 
       {/* Modals */}
       <Dialog open={openModal === 'about'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="sm:max-w-6xl w-[92vw] p-0">
-          <ScrollArea className="h-[85vh] p-6">
+        <DialogContent className="sm:max-w-7xl w-[95vw] max-h-[95vh] p-0 overflow-hidden">
+          <ScrollArea className="h-[90vh] max-h-[90vh] p-6">
             <About />
           </ScrollArea>
         </DialogContent>
       </Dialog>
 
       <Dialog open={openModal === 'education'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="sm:max-w-6xl w-[92vw] p-0">
-          <ScrollArea className="h-[85vh] p-6">
+        <DialogContent className="sm:max-w-7xl w-[95vw] max-h-[95vh] p-0 overflow-hidden">
+          <ScrollArea className="h-[90vh] max-h-[90vh] p-6">
             <Education />
           </ScrollArea>
         </DialogContent>
       </Dialog>
 
       <Dialog open={openModal === 'skills'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="sm:max-w-6xl w-[92vw] p-0">
-          <ScrollArea className="h-[85vh] p-6">
+        <DialogContent className="sm:max-w-7xl w-[95vw] max-h-[95vh] p-0 overflow-hidden">
+          <ScrollArea className="h-[90vh] max-h-[90vh] p-6">
             <Skills />
           </ScrollArea>
         </DialogContent>
       </Dialog>
 
       <Dialog open={openModal === 'projects'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="sm:max-w-6xl w-[92vw] p-0">
-          <ScrollArea className="h-[85vh] p-6">
+        <DialogContent className="sm:max-w-7xl w-[95vw] max-h-[95vh] p-0 overflow-hidden">
+          <ScrollArea className="h-[90vh] max-h-[90vh] p-6">
             <Projects />
           </ScrollArea>
         </DialogContent>
       </Dialog>
 
       <Dialog open={openModal === 'goals'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="sm:max-w-6xl w-[92vw] p-0">
-          <ScrollArea className="h-[85vh] p-6">
+        <DialogContent className="sm:max-w-7xl w-[95vw] max-h-[95vh] p-0 overflow-hidden">
+          <ScrollArea className="h-[90vh] max-h-[90vh] p-6">
             <Goals />
           </ScrollArea>
         </DialogContent>
       </Dialog>
 
       <Dialog open={openModal === 'contact'} onOpenChange={() => setOpenModal(null)}>
-        <DialogContent className="sm:max-w-6xl w-[92vw] p-0">
-          <ScrollArea className="h-[85vh] p-6">
+        <DialogContent className="sm:max-w-7xl w-[95vw] max-h-[95vh] p-0 overflow-hidden">
+          <ScrollArea className="h-[90vh] max-h-[90vh] p-6">
             <Contact />
           </ScrollArea>
         </DialogContent>
