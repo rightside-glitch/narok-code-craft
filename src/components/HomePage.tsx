@@ -11,7 +11,8 @@ import {
   TrendingUp,
   Mail,
   MapPin,
-  Github
+  Github,
+  Briefcase
 } from "lucide-react";
 import heroTechImage from "@/assets/hero-tech.jpg";
 import computerTechImage from "@/assets/computer-tech.jpg";
@@ -21,6 +22,7 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Goals from "@/components/Goals";
 import Contact from "@/components/Contact";
+import Experience from "@/components/Experience";
 
 const HomePage = () => {
   const [openModal, setOpenModal] = useState<string | null>(null);
@@ -70,6 +72,13 @@ const HomePage = () => {
                 Projects
               </button>
               <button
+                onClick={() => setOpenModal('experience')}
+                className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 hover:scale-105"
+              >
+                <Briefcase className="w-4 h-4" />
+                Experience
+              </button>
+              <button
                 onClick={() => setOpenModal('goals')}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 hover:scale-105"
               >
@@ -114,6 +123,13 @@ const HomePage = () => {
                 onClick={() => setOpenModal('projects')}
               >
                 <FolderOpen className="w-4 h-4" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setOpenModal('experience')}
+              >
+                <Briefcase className="w-4 h-4" />
               </Button>
               <Button
                 variant="ghost"
@@ -232,6 +248,14 @@ const HomePage = () => {
         <DialogContent className="sm:max-w-7xl w-[95vw] max-h-[95vh] p-0 overflow-hidden">
           <ScrollArea className="h-[90vh] max-h-[90vh] p-6">
             <Projects />
+          </ScrollArea>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={openModal === 'experience'} onOpenChange={() => setOpenModal(null)}>
+        <DialogContent className="sm:max-w-7xl w-[95vw] max-h-[95vh] p-0 overflow-hidden">
+          <ScrollArea className="h-[90vh] max-h-[90vh] p-6">
+            <Experience />
           </ScrollArea>
         </DialogContent>
       </Dialog>

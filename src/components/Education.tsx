@@ -39,8 +39,8 @@ const Education = () => {
                 <div>
                   <CardTitle className="text-2xl">Diploma in Information Technology</CardTitle>
                   <p className="text-muted-foreground text-lg">Zetech University</p>
-                  <Badge className="mt-2 bg-primary/10 text-primary border-primary/20">
-                    Currently Pursuing
+                  <Badge className="mt-2 bg-green-500/10 text-green-400 border-green-500/20">
+                    Completed
                   </Badge>
                 </div>
               </div>

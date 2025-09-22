@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { Code, Database, Globe, Wrench } from "lucide-react";
+import { Code, Database, Globe, Wrench, Palette } from "lucide-react";
 import skillsTechImage from "@/assets/skills-tech.jpg";
 
 const Skills = () => {
@@ -35,10 +35,20 @@ const Skills = () => {
       ]
     },
     {
-      title: "Other Skills",
+      title: "IT Infrastructure & Support",
       icon: Wrench,
       skills: [
-        { name: "System Documentation", level: 90, description: "Technical Writing, Process Documentation" },
+        { name: "CCNA (Cisco Certified Network Associate)", level: 85, description: "Network Configuration, Routing & Switching" },
+        { name: "Hardware Maintenance", level: 90, description: "Computer Assembly, Troubleshooting, Repairs" },
+        { name: "Software Maintenance", level: 88, description: "OS Installation, Updates, System Optimization" },
+        { name: "System Documentation", level: 90, description: "Technical Writing, Process Documentation" }
+      ]
+    },
+    {
+      title: "Design & Creative",
+      icon: Palette,
+      skills: [
+        { name: "Graphic Design", level: 75, description: "Visual Design, Branding, Digital Assets" },
         { name: "IT Consultancy", level: 70, description: "Fundamentals, Problem Analysis" },
         { name: "WordPress", level: 65, description: "Basics, Content Management" }
       ]
