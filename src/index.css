@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Black + White + Gold Theme */
+    /* Black + Purple Theme */
     --background: 0 0% 0%; /* Pure black background */
     --foreground: 0 0% 98%; /* White text */
 
@@ -18,8 +18,8 @@ All colors MUST be HSL.
     --popover: 0 0% 3%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 45 100% 50%; /* Gold/Yellow accent */
-    --primary-foreground: 0 0% 0%;
+    --primary: 270 100% 60%; /* Purple accent */
+    --primary-foreground: 0 0% 98%;
 
     --secondary: 0 0% 8%;
     --secondary-foreground: 0 0% 98%;
@@ -27,7 +27,7 @@ All colors MUST be HSL.
     --muted: 0 0% 10%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 45 100% 60%; /* Brighter gold for accents */
+    --accent: 280 100% 70%; /* Brighter purple for accents */
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
@@ -35,26 +35,26 @@ All colors MUST be HSL.
 
     --border: 0 0% 15%;
     --input: 0 0% 8%;
-    --ring: 45 100% 50%;
+    --ring: 270 100% 60%;
 
-    /* Gold accent variations */
-    --primary-glow: 45 100% 65%;
-    --secondary-glow: 45 100% 70%;
-    --accent-blue: 0 0% 95%;
-    --accent-purple: 45 100% 55%;
-    --accent-pink: 45 100% 60%;
-    --accent-orange: 45 100% 65%;
+    /* Purple accent variations */
+    --primary-glow: 270 100% 75%;
+    --secondary-glow: 280 100% 80%;
+    --accent-blue: 240 100% 75%;
+    --accent-purple: 270 100% 65%;
+    --accent-pink: 300 100% 70%;
+    --accent-orange: 260 100% 65%;
 
-    /* Black + Gold gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 0%), hsl(45 100% 50%), hsl(45 100% 60%));
+    /* Black + Purple gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 0%), hsl(270 100% 60%), hsl(280 100% 70%));
     --gradient-secondary: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 5%));
-    --gradient-accent: linear-gradient(135deg, hsl(45 100% 50%), hsl(45 100% 60%));
-    --gradient-rainbow: linear-gradient(135deg, hsl(0 0% 0%), hsl(45 100% 50%), hsl(45 100% 65%), hsl(0 0% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(270 100% 60%), hsl(280 100% 70%));
+    --gradient-rainbow: linear-gradient(135deg, hsl(0 0% 0%), hsl(270 100% 60%), hsl(280 100% 70%), hsl(0 0% 98%));
     --gradient-subtle: linear-gradient(180deg, hsl(0 0% 0%), hsl(0 0% 5%));
     
-    /* Gold glow effects */
-    --shadow-glow: 0 0 40px hsl(45 100% 50% / 0.4);
-    --shadow-glow-lg: 0 0 60px hsl(45 100% 50% / 0.3);
+    /* Purple glow effects */
+    --shadow-glow: 0 0 40px hsl(270 100% 60% / 0.4);
+    --shadow-glow-lg: 0 0 60px hsl(270 100% 60% / 0.3);
     --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.8);
     --shadow-floating: 0 25px 50px hsl(0 0% 0% / 0.6);
     
