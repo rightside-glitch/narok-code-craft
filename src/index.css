@@ -65,6 +65,11 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
+    /* Bubble animations */
+    --bubble-float: bubble-float 6s ease-in-out infinite;
+    --bubble-float-delayed: bubble-float 8s ease-in-out infinite 2s;
+    --bubble-float-slow: bubble-float 10s ease-in-out infinite 4s;
+
     --sidebar-background: 0 0% 98%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -129,4 +134,61 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Bubble animations */
+@keyframes bubble-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) scale(1.1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-40px) translateX(-5px) scale(0.9);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-20px) translateX(-10px) scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(1);
+    opacity: 0;
+  }
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: bubble-rise 15s infinite linear;
+  backdrop-filter: blur(2px);
+}
+
+.bubble-float {
+  animation: bubble-float 6s ease-in-out infinite;
+}
+
+.bubble-float-delayed {
+  animation: bubble-float 8s ease-in-out infinite 2s;
+}
+
+.bubble-float-slow {
+  animation: bubble-float 10s ease-in-out infinite 4s;
 }
