@@ -144,7 +144,7 @@ const HomePage = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-rainbow bg-clip-text text-transparent animate-rainbow bg-300%">
+            <h1 className="text-5xl md:text-7xl font-bold mb-4 text-green-400">
               Samuel Parkire Nkoitiko
             </h1>
             <p className="text-xl md:text-2xl text-primary-glow mb-2">"Rightside"</p>
